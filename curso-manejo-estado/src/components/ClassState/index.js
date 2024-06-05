@@ -12,9 +12,7 @@ class ClassState extends React.Component {
   componentDidUpdate(){
     if(this.state.loading){
       setTimeout(() => {
-        console.log("Haciendo la validación");
         this.onChangeLoading()
-        console.log("Terminando la validación")
       }, 3000);
     }
   }
