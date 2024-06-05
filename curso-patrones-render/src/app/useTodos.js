@@ -11,27 +11,46 @@ function useTodos() {
   } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
-  const [searchedTodos, setSearchedTodos] = React.useState(todos);
+  console.log(todos)
+  // const [searchedTodos, setSearchedTodos] = React.useState(todos);
 
+  // Derivated states: variables defined from an state content
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  useEffect(() => {
-    if (!searchValue.length >= 1) {
-      setSearchedTodos(todos);
-      return;
-    }
+  let searchedTodos = [];
 
-    setSearchedTodos(
-      todos.filter(todo => 
-        {
-          const todoText = todo.text.toLowerCase();
-          const searchText = searchValue.toLowerCase();
-          return todoText.includes(searchText);      
-        }
-      )
-    );
-  }, [searchValue, todos]);
+  if (!searchValue.length >= 1) {
+    searchedTodos = todos;
+  } else {
+    searchedTodos = todos.filter(todo => {
+        const todoText = todo.text.toLowerCase();
+        const searchText = searchValue.toLowerCase();
+        return todoText.includes(searchText);
+      }
+    )
+  }
+
+  // Avoid making a state from an other state
+
+  // useEffect(() => {
+  //   console.log('>>>>', todos);
+  //   if (!searchValue.length >= 1) {
+  //     console.log('>>>> Nothing to search');
+  //     setSearchedTodos(todos);
+  //     return;
+  //   }
+
+  //   setSearchedTodos(
+  //     todos.filter(todo => 
+  //       {
+  //         const todoText = todo.text.toLowerCase();
+  //         const searchText = searchValue.toLowerCase();
+  //         return todoText.includes(searchText);      
+  //       }
+  //     )
+  //   );
+  // }, [searchValue, todos]);
 
   const addTodo = (text) => {
     const newTodos = [...todos];
@@ -55,7 +74,7 @@ function useTodos() {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
-  
+
   return {
     loading,
     error,

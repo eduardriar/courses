@@ -19,7 +19,7 @@ import { ChangeAlertWithStorageListener } from '@/components/ChangeAlert';
 // Render props, mantener el padre limpio y delegar la tarea de validación al hijo, mezclado con render function pero no funcionó :(
 
 function App() {
-  
+
   const {
     error,
     loading,
@@ -57,7 +57,7 @@ function App() {
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
-        onEmptySearchResults={(searchText) => 
+        onEmptySearchResults={(searchText) =>
           <p>No hay resultados para {searchText}</p>
         }
         render={todo => (<TodoItem
@@ -88,7 +88,7 @@ function App() {
         loading={loading}
         setOpenModal={setOpenModal}
       />
-      <ChangeAlertWithStorageListener sincronize={sincronize}/>
+      <ChangeAlertWithStorageListener sincronize={sincronize} />
     </React.Fragment>
   );
 }
