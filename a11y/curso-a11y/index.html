@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Mi Portafolio</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <img src="images/me.jpg" alt="" class="header-img" />
+      <h1 class="header">Camilo Rincon</h1>
+      <h2 class="subtitle">Front End Developer</h2>
+      <nav>
+        <ul class="navigation">
+          <li class="nav-item">
+            <a href="/acerca-de">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a href="/mis-proyectos">Mis Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contacto">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2 class="header">Acerca de mi</h2>
+        <p class="intro">
+          Hola! Soy Juliana 👋 Soy Colombo-Canadiense, amo los gatos y tambien crear cosas lindas para la web 😍 Después
+          de estudiar comunicación social y ciencia política en la universidad, trabajé varios años en mercadeo digital
+          hasta que aprendí a programar. Llevo un poco más de tres años enfocándome en front end, específicamente en
+          JavaScript y accesibilidad. Sueño con una web donde todo el mundo pueda participar. Aquí puedes ver algunos de
+          mis proyectos recientes y también puedes contactarme por si quieres hablar de tecnología, accesibilidad o
+          gatos!
+        </p>
+        <ul class="social-media">
+          <li>
+            <a href="https://twitter.com/gmzjuliana" target="_blank">
+              <img src="images/twitter.png" alt="twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/gmzjuliana" target="_blank"
+              ><img src="images/github-logo.png" alt="github"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank">
+              <img src="images/linkedin.png" alt="linkedIn"/>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="header">Mis proyectos</h2>
+        <div class="carousel">
+          <div class="arrow arrow-left" aria-label="backwards button"></div>
+          <div class="window">
+            <ul class="project-container">
+              <li>
+                <button>
+                  <img class="project project1" src="images/project1.png" alt="Mi primer proyecto Explore" />
+                </button>
+              </li>
+              <li>
+                <button>
+                  <img
+                    class="project project2"
+                    src="images/project2.png"
+                    alt="Mi segundo proyecto Abstract Background" />
+                </button>
+              </li>
+              <li>
+                <button><img class="project project3" src="images/project3.png" alt="Mi tercer proyecto" /></button>
+              </li>
+              <li aria-hidden="true">
+                <button><img class="project project4" src="images/project4.png" alt="Mi cuarto proyecto" /></button>
+              </li>
+              <li aria-hidden="true">
+                <button><img class="project project5" src="images/project5.png" alt="Mi quinto proyecto" /></button>
+              </li>
+            </ul>
+          </div>
+          <div class="arrow arrow-right" aria-label="forward button"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="contact-section">
+      <h2 class="header">Contacto</h2>
+      <form class="form-container">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" /> <br />
+        <label for="correo">Correo</label>
+        <input type="text" id="correo" name="correo" /> <br />
+        <div class="message-input">
+          <label for="mensaje">Mensaje</label>
+          <input type="text" id="mensaje" name="mensaje" /> <br /></div>
+        <div class="send-button">Enviar</div>
+      </form>
+    </footer>
+    <div class="notification">El formulario fue enviado sin errores</div>
+    <div class="modal-container">
+      <div class="modal">
+        Ejemplo de un proyecto mio
+        <div class="modal-project-image"></div>
+      </div>
+    </div>
+
+    <script src="index.js" type="text/javascript"></script>
+</html>
