@@ -111,11 +111,18 @@ nav {
 
 .nav-item:hover {
   background-color: var(--verde);
+  cursor: pointer;
+}
+
+.nav-item:hover a {
+  color: var(--gris-oscuro);
+
 }
 
 .intro {
   margin: 24px 196px 0;
   font-family: var(--secondary-font);
+  color: var(--blanco);
 }
 
 .social-media {
@@ -299,4 +306,9 @@ input {
   height: 400px;
   margin: 16px;
   width: 550px;
+}
+
+.form-label {
+  font-family: var(--secondary-font);
+  color: var(--blanco);
 }
