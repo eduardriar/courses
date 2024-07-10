@@ -5,13 +5,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Mi Portafolio</title>
     <link href="styles.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet" />
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
     <header>
       <img src="images/me.jpg" alt="" class="header-img" />
       <h1 class="header">Camilo Rincon</h1>
@@ -30,7 +28,7 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <section>
         <h2 class="header">Acerca de mi</h2>
         <p class="intro">
@@ -45,16 +43,19 @@
           <li>
             <a href="https://twitter.com/gmzjuliana" target="_blank">
               <img src="images/twitter.png" alt="twitter" />
+              <p class="social-link-text">Twitter</p>
             </a>
           </li>
           <li>
             <a href="https://github.com/gmzjuliana" target="_blank"
-              ><img src="images/github-logo.png" alt="github"/>
+              ><img src="images/github-logo.png" alt="github" />
+              <p class="social-link-text">GitHub</p>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/gomezjuliana/" target="_blank">
-              <img src="images/linkedin.png" alt="linkedIn"/>
+              <img src="images/linkedin.png" alt="linkedIn" />
+              <p class="social-link-text">LinkedIn</p>
             </a>
           </li>
         </ul>
@@ -63,34 +64,37 @@
       <section>
         <h2 class="header">Mis proyectos</h2>
         <div class="carousel">
-          <div class="arrow arrow-left" aria-label="backwards button"></div>
+          <button class="arrow arrow-left" aria-label="backwards button"></button>
           <div class="window">
             <ul class="project-container">
-              <li>
-                <button>
-                  <img class="project project1" src="images/project1.png" alt="Mi primer proyecto Explore" />
+              <li class="project1-container">
+                <button class="project1 project">
+                  <img class="project-img" src="images/project1.png" alt="Mi primer proyecto Explore" />
                 </button>
               </li>
-              <li>
-                <button>
-                  <img
-                    class="project project2"
-                    src="images/project2.png"
-                    alt="Mi segundo proyecto Abstract Background" />
+              <li class="project2-container">
+                <button class="project2 project">
+                  <img class="project-img" src="images/project2.png" alt="Mi segundo proyecto Abstract Background" />
                 </button>
               </li>
-              <li>
-                <button><img class="project project3" src="images/project3.png" alt="Mi tercer proyecto" /></button>
+              <li class="project3-container">
+                <button class="project3 project">
+                  <img class="project-img" src="images/project3.png" alt="Mi tercer proyecto" />
+                </button>
               </li>
-              <li aria-hidden="true">
-                <button><img class="project project4" src="images/project4.png" alt="Mi cuarto proyecto" /></button>
+              <li aria-hidden="true" class="project4-container">
+                <button class="project4 project" tabindex="-1">
+                  <img class="project-img" src="images/project4.png" alt="Mi cuarto proyecto" />
+                </button>
               </li>
-              <li aria-hidden="true">
-                <button><img class="project project5" src="images/project5.png" alt="Mi quinto proyecto" /></button>
+              <li aria-hidden="true" class="project5-container">
+                <button class="project5 project" tabindex="-1">
+                  <img class="project-img" src="images/project5.png" alt="Mi quinto proyecto" />
+                </button>
               </li>
             </ul>
           </div>
-          <div class="arrow arrow-right" aria-label="forward button"></div>
+          <button class="arrow arrow-right" aria-label="forward button"></button>
         </div>
       </section>
     </main>
@@ -98,23 +102,27 @@
     <footer class="contact-section">
       <h2 class="header">Contacto</h2>
       <form class="form-container">
+        <p class="intro">Puedes usar el formulario para mandarme un mensaje</p>
         <label class="form-label" for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" /> <br />
+        <span id="name-error" aria-live="assertive"></span><br>
+        <input type="text" id="nombre" name="nombre" id="nombre"/> <br />
         <label class="form-label" for="correo">Correo</label>
         <input type="text" id="correo" name="correo" /> <br />
         <div class="message-input">
           <label class="form-label" for="mensaje">Mensaje</label>
-          <input type="text" id="mensaje" name="mensaje" /> <br /></div>
-        <div class="send-button">Enviar</div>
+          <input type="text" id="mensaje" name="mensaje" /> <br />
+        </div>
+        <button class="send-button">Enviar</button>
       </form>
     </footer>
-    <div class="notification">El formulario fue enviado sin errores</div>
+    <div class="notification" aria-live="assertive"></div>
     <div class="modal-container">
       <div class="modal">
-        Ejemplo de un proyecto mio
-        <div class="modal-project-image"></div>
+        <h2 class="header" id="modal-header"  tabindex="0">Ejemplo de un proyecto mio</h2>
+        <img src="images/project1.png" alt="Un ejemplo de mi proyecto" class="modal-project-image" />
+        <button class="modal-button">Cerrar</button>
       </div>
     </div>
-
-    <script src="index.js" type="text/javascript"></script>
+  </body>
+  <script src="index.js" type="text/javascript"></script>
 </html>

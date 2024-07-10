@@ -11,12 +11,15 @@ import {
   Patch,
   NotFoundException,
 } from '@nestjs/common';
-import { CreateUserDTO } from './create-user.dto';
+import { CreateUserDTO } from './dto/create-user.dto';
 import { UsersService } from './users.service';
-import { UpdateUserDTO } from './update-user.dto';
+import { UpdateUserDTO } from './dto/update-user.dto';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { UserDTO } from './dto/user.dto';
 
 // @Controller decorator allow us to create the auth path in this case
 @Controller('auth')
+@Serialize(UserDTO)
 export class UsersController {
   constructor(private usersService: UsersService) {}
   @Post('/signup')
